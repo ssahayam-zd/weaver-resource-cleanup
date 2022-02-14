@@ -15,7 +15,7 @@ object SharedResources extends GlobalResource {
     val release = (s: String) => for {
       _ <- Task(println(s"======> About to release shared resource: $s"))
       _ <- Task(Thread.sleep(10000))
-      _ <-  Task(println(s"======> released shared resource: $s"))
+      _ <-  Task(println(s"======> Released shared resource: $s"))
     } yield ()
 
     for {
