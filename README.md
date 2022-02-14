@@ -15,7 +15,8 @@ Output:
 
 ```
 weaver-resource-cleanup> test
-=====> acquiring shared resource
+=====> Acquiring shared resource
+=====> Acquired shared resource: hello world!
 [info] acme.weaverissue.SharingSuite
 [info] + a stranger, from the outside ! ooooh 33ms
 [info] acme.weaverissue.OtherSharingSuite
@@ -29,7 +30,8 @@ Expected:
 
 ```
 weaver-resource-cleanup> test
-=====> acquiring shared resource
+=====> Acquiring shared resource
+=====> Acquired shared resource: hello world!
 [info] acme.weaverissue.SharingSuite
 [info] + a stranger, from the outside ! ooooh 33ms
 [info] acme.weaverissue.OtherSharingSuite
