@@ -8,9 +8,11 @@ import cats.effect.Resource
 object SharedResources extends GlobalResource {
   def sharedResources(global: GlobalWrite): Resource[Task, Unit] = {
 
-    val acquire = {
-      Task(println("=====> acquiring shared resource")) >> Task.pure("hello world!")
-    }
+    val acquire = for {
+      _ <- Task(println("=====> Acquiring shared resource"))
+      res <- Task.pure("hello world!")
+      _ <- Task(println(s"=====> Acquired shared resource: $res"))      
+    } yield res
 
     val release = (s: String) => for {
       _ <- Task(println(s"======> About to release shared resource: $s"))
